@@ -1,9 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8800;
 
 app.use(express.json()); // To parse JSON bodies
-
+app.use(cors());
 /*
 app.post('/bfhl', (req, res) => {
     const {data}  = req.body;
