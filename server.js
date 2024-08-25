@@ -61,6 +61,7 @@ app.post('/bfhl', (req, res) => {
                     }
                 }
             }
+            else throw "invalid input"
         });
 
         const response = {
@@ -82,6 +83,12 @@ app.post('/bfhl', (req, res) => {
             is_success: false,
             message: "An error occurred while processing the request."
         });
+        if(error == "invalid input"){
+            res.status(400).json({
+                is_success: false,
+                maeeage: "Invalid Input"
+            })
+        }
     }
 });
 
